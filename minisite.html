@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minisite</title>
+    <link rel="stylesheet" href="minisite.css">
+</head>
+<body> 
+                
+    <!-- Bande menu noir du haut -->
+    	    <ol>
+                <li><a href="#" class="home_button" id="home_button"></a></li>
+				<li><a class="profil_button" id="profil_button"></a>Mon Profil</li>
+                <li>Mes messages</li>
+                <li><a class="actu_button" id="actu_button"></a>Mon Actu</li>
+				<li>Contacts</li>
+				<li><form>
+					<input class="search" type="text" placeholder="Rechercher..."/>
+					<input class="loupe" type="image" src="imgs/loupe.png"/>
+					</form>
+				</li>
+			</ol>
+    <!-- Bande menu noir du haut -->
+
+    <!-- page profil -->     
+        <fieldset id="profil">
+            <div>
+                <label><h4>Nom</h4></label>
+                <input type="text" name="name" id="name">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <label><h4>Prénom</h4></label>
+                <input type="text" name="firstname" id="firstname">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <label><h4>Date de naissance</h4></label>
+                <input type="date" name="birthday" id="birthday">
+                <p class="error"></p>
+            </div>
+
+            <div>           
+                <label><h4>Adresse</h4></label>
+                <input type="text" name="address" id="address" value="Mon adresse"style="width: 250px">
+                <p class="error"></p>
+            </div>
+
+            <div>          
+                <label><h4>Code Postal</h4></label>
+                <input type="text" name="cp" id="cp" value="66140" title="5 chiffres obligatoirement">
+                <p class="error"></p>
+            </div>
+                    
+            <div>
+                <label><h4>Ville</h4></label>
+                <input type="text" name="city" id="city" value="Canet">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <label><h4>Téléphone</h4></label>
+                <input type="tel" name="tel" id="tel" value="0102030405" placeholder="10 chiffres sans espace">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <label><h4>Email</h4></label>
+                <input type="email" name="mail" id="mail" style="width: 250px" maxLength="64" required
+                    placeholder="nomutilisateur@fournisseur.ext" pattern=".+@*.*"
+                    title="Merci de fournir uniquement une adresse mail valide">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <label><h4></h4></label>
+            </div>
+
+            <div>
+                <label><h4>Password</h4></label>
+                <input type="password" name="password" id="password" value="1maupetit"
+                title="Le mot de passe doit comporter 8 caractères et 1 chiffre au moins">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <label><h4>Confirm Password</h4></label>
+                <input type="password" name="password_confirm" id="password_confirm" value="1maupetit">
+                <p class="error"></p>
+            </div>
+
+            <div>
+                <input type="submit" value="enregistrer" id="send_form">
+            </div>
+            
+        </fieldset>
+
+    <!-- page profil -->
+
+    <!-- Home page -->
+        <fieldset id="home">
+            
+            <div>
+                <c type="text" id="author" value="">
+            </div>
+
+        </fieldset>
+
+    <!-- Home page -->
+
+    <!-- page actus -->
+
+        <fieldset id="actu">
+                <input class="plus_button" type="submit" value="Ecrire un article" id="plus_button">
+                <!-- <button class="plus_button" id="plus_button"></button> -->
+                <br>
+                <form class="form" id="note_create">
+                    <input type="text" name="note-title" id="note-title" placeholder="Titre"><br>
+                    <textarea name="note-article" id="note-article" placeholder="Article" rows="8">
+                    </textarea>
+                    <input type="submit" value="Publier" id="note-publier">
+                </form>
+
+                <div id="cart">
+                </div>
+
+        </fieldset>
+
+    <!-- page actus -->
+
+
+
+
+
+   
+
+    <script src="jquery.js"></script>
+    <script src="api.min.js"></script>
+    <script src="minisite.js"></script>
+    
+
+</body>
+</html>
