@@ -4,32 +4,46 @@ var $profil = $("#profil");
 var $profil_button = $(".profil_button");
 var $actu = $("#actu");
 var $actu_button = $(".actu_button");
+var $message = $("#message");
+var $message_button = $(".message_button");
 var $plus_button = $("#plus_button");
-var $form = $(".form");
+var $form = $("#note_create");
+var full_profil = [];
 
 
 $profil.hide();
 $home.hide();
 $actu.hide();
-
+$message.hide();
 
 $home_button.click(function(){
     $profil.hide();
     $home.show();
     $actu.hide();
+    $message.hide();
 })
 
 $profil_button.click(function(){
     $profil.show();
     $home.hide();
     $actu.hide();
+    $message.hide();
 })
 
 $actu_button.click(function(){
     $profil.hide();
     $home.hide();
     $actu.show();
+    $message.hide();
 })
+
+$message_button.click(function(){
+    $profil.hide();
+    $home.hide();
+    $actu.hide();
+    $message.show();
+})
+
 
 var send_form = document.getElementById("send_form");
 var info_inputs = {
@@ -45,7 +59,6 @@ var info_inputs = {
     error_code_postal       : document.querySelector("#cp + .error"),
     tel                     : document.getElementById("tel"),
     error_tel               : document.querySelector("#tel + .error"), 
-
 }
 
 var errors = document.getElementsByClassName("error");
@@ -115,7 +128,7 @@ send_form.onclick = function() {
     
     var retrieved_profil = localStorage.getItem("profil");  
     
-    var full_profil = JSON.parse( retrieved_profil );
+    full_profil = JSON.parse( retrieved_profil );
     
     
     
@@ -125,11 +138,7 @@ send_form.onclick = function() {
     
     
     var author = document.getElementById("author").textContent;
-    document.getElementById("author").textContent = full_profil.firstname + " " + full_profil.name;
-    
-    console.log(full_profil.name);
-    console.log(full_profil.firstname);
-     
+    document.getElementById("author").textContent = full_profil.firstname + " " + full_profil.name;   
 }
 
 
@@ -157,7 +166,7 @@ $form.submit(function(event){
         else {
 
             var note="<div class='note-container'>";
-                    note +="<h3>" + "Auteur :" + "</h3>";
+                    note +="<h3>" + "Auteur :" + full_profil.firstname + " " + full_profil.name + "</h3>";
                     note +="<h3>" + note_title + "</h3>";
                     note +="<h5>" + note_article + "</h5>";
                     note +="<br>";
@@ -177,6 +186,7 @@ $form.submit(function(event){
     $('.supp-button').on("click", function(){
         $(this).parent( ".note-container" ).remove();
     });
-
+    console.log(author);
+    
 });
         
